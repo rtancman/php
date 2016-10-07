@@ -16,8 +16,8 @@ ldap-utils libldb-dev libldap2-dev \
 && echo "extension=mongo.so" >> /usr/local/etc/php/conf.d/mongo.ini \
 && yes '' | pecl install -f mongodb \
 && echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini \
+&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-install iconv mcrypt mysql \
-    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     gd zip pdo pdo_mysql soap shmop sockets sysvmsg sysvsem \
     sysvshm pcntl mbstring gettext exif dba bcmath calendar bz2 \
     wddx mysqli pgsql pdo_pgsql pdo_sqlite opcache \
