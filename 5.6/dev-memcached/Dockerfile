@@ -1,4 +1,4 @@
-FROM php:5.6-fpm-dev
+FROM rtancman/php:5.6-fpm-dev
 
 RUN yes '' | pecl install -f memcache \
     && echo "extension=memcache.so" >> /usr/local/etc/php/conf.d/memcache.ini \
